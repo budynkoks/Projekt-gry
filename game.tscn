@@ -4,13 +4,23 @@
 [ext_resource type="PackedScene" uid="uid://v45siqi72g4b" path="res://enemy.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://clc5auq0sbo8r" path="res://object.tscn" id="3_feb5d"]
 
+[sub_resource type="ImageTexture" id="ImageTexture_feb5d"]
+
 [node name="Game" type="Node2D" unique_id=721533776]
 y_sort_enabled = true
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1578786874]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=63616139]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1578786874]
 y_sort_enabled = true
-offset_right = 1564.0
-offset_bottom = 884.0
+offset_right = 1915.0
+offset_bottom = 1080.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=902294853]
+offset_right = 1915.0
+offset_bottom = 1081.0
+texture = SubResource("ImageTexture_feb5d")
 
 [node name="Player" parent="." unique_id=1227242896 instance=ExtResource("2_feb5d")]
 position = Vector2(789, 456)
