@@ -15,6 +15,7 @@ script = ExtResource("1_dk5gl")
 shape = SubResource("CircleShape2D_dk5gl")
 
 [node name="WeaponPivot" type="Marker2D" parent="." unique_id=2004966679]
+unique_name_in_owner = true
 
 [node name="Pistol" type="Sprite2D" parent="WeaponPivot" unique_id=935041806]
 position = Vector2(81, -3)

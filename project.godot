@@ -75,7 +75,7 @@ Settings/Show_Tooltips=true
 [application]
 
 config/name="Gra survivors"
-run/main_scene="uid://c1sx7bic4uhdj"
+run/main_scene="uid://b3u84076due2"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.png"
 
@@ -91,7 +91,7 @@ project/assembly_name="Getting started with Godot 4"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/colorpicker_presets/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
