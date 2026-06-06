@@ -45,3 +45,11 @@ Dodatkowo zaimplementowano inteligentny system namierzania dla drugiej broni (R�
 * **Spadki wydajności:** Gra nie jest zoptymalizowana pod wydajność.
 * **Brak progresu:**.
 * **Brak zapisywania postępu:** Po restarcie z ekranu Game Over gra nie zapisuje najwyższego wyniku (maksymalnego czasu przetrwania) pomiędzy sesjami.
+
+##  Żródła assetów
+https://frostwindz.itch.io/pixel-art-slashes
+https://karsiori.itch.io/pixel-art-rock-pile-pack
+https://ansimuz.itch.io/gothicvania-patreon-collection
+https://pixabay.com/sound-effects/film-special-effects-sword-slash-02-266315/)
+
+
