@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bbk0jdt5oxv1d"]
+
+[ext_resource type="Script" uid="uid://171gf3eqg7uk" path="res://game_over.gd" id="1_g2n34"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1815584839]
+process_mode = 3
+script = ExtResource("1_g2n34")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1840363744]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5931336, 0.59313357, 0.59313357, 0.5176471)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=844206075]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -379.5
+offset_top = -170.0
+offset_right = 379.5
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Play_button" type="Button" parent="ColorRect/VBoxContainer" unique_id=1195742356]
+layout_mode = 2
+theme_override_font_sizes/font_size = 85
+text = "Play"
+
+[node name="Menu_button" type="Button" parent="ColorRect/VBoxContainer" unique_id=1721521506]
+layout_mode = 2
+theme_override_font_sizes/font_size = 85
+text = "Menu"
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=538076499]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -563.5
+offset_top = 136.0
+offset_right = 565.5
+offset_bottom = 273.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.1148968, 0.11489681, 0.1148968, 1)
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/Play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Menu_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Menu_button" to="." method="_on_menu_button_pressed"]

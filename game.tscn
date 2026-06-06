@@ -1,20 +1,21 @@
-[gd_scene format=3 uid="uid://b3u84076due2"]
+[gd_scene format=3 uid="uid://b5mh7jy7g7asi"]
 
-[ext_resource type="Script" uid="uid://bl4hswo7yuuv2" path="res://game.gd" id="1_fc0e3"]
+[ext_resource type="Script" uid="uid://bl4hswo7yuuv2" path="res://game.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://clc5auq0sbo8r" path="res://object.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://bbk0jdt5oxv1d" path="res://Game_over.tscn" id="4_fc0e3"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_feb5d"]
 
 [sub_resource type="Curve2D" id="Curve2D_feb5d"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -159, -143, 0, 0, 0, 0, 2047, -99, 0, 0, 0, 0, 2060, 1179, 0, 0, 0, 0, -181, 1166, 0, 0, 0, 0, -159, -143)
+"points": PackedVector2Array(0, 0, 0, 0, -159, -143, 0, 0, 0, 0, 2209.0222, -215.55286, 0, 0, 0, 0, 2161.1638, 1194.9818, 0, 0, 0, 0, -283.63293, 1256.8472, 0, 0, 0, 0, -159, -143)
 }
 point_count = 5
 
 [node name="Game" type="Node2D" unique_id=721533776]
 y_sort_enabled = true
-script = ExtResource("1_fc0e3")
+script = ExtResource("1_feb5d")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=63616139]
 layer = -1
@@ -23,6 +24,7 @@ layer = -1
 y_sort_enabled = true
 offset_right = 1915.0
 offset_bottom = 1080.0
+color = Color(0.5211406, 0.5211406, 0.5211405, 1)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=902294853]
 offset_right = 1915.0
@@ -33,13 +35,14 @@ texture = SubResource("ImageTexture_feb5d")
 position = Vector2(789, 456)
 
 [node name="Path2D" type="Path2D" parent="Player" unique_id=2106131922]
-position = Vector2(-789, -456)
+position = Vector2(-248.85876, -117.394455)
+scale = Vector2(0.25434718, 0.25332785)
 curve = SubResource("Curve2D_feb5d")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D" unique_id=375664096]
 unique_name_in_owner = true
 position = Vector2(-159, -143)
-rotation = 0.01994296
+rotation = -0.030629005
 
 [node name="StaticBody2D" parent="." unique_id=258018503 instance=ExtResource("3_feb5d")]
 position = Vector2(330, 296)
@@ -48,42 +51,41 @@ position = Vector2(330, 296)
 position = Vector2(568, 662)
 
 [node name="StaticBody2D3" parent="." unique_id=1540573711 instance=ExtResource("3_feb5d")]
-position = Vector2(1175, 240)
+position = Vector2(552, 336)
 
 [node name="StaticBody2D4" parent="." unique_id=478412148 instance=ExtResource("3_feb5d")]
-position = Vector2(1151, 632)
+position = Vector2(1112, 680)
 
 [node name="Timer" type="Timer" parent="." unique_id=1082956497]
+unique_name_in_owner = true
 wait_time = 0.3
 autostart = true
 
-[node name="GameOver" type="CanvasLayer" parent="." unique_id=1121719216]
-unique_name_in_owner = true
+[node name="Boss_timer" type="Timer" parent="." unique_id=1137306962]
+wait_time = 15.0
+autostart = true
+
+[node name="GameOver" parent="." unique_id=1815584839 instance=ExtResource("4_fc0e3")]
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="GameOver" unique_id=203224841]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.5176471)
+[node name="StaticBody2D5" parent="." unique_id=391888050 instance=ExtResource("3_feb5d")]
+position = Vector2(1056, 416)
 
-[node name="Label" type="Label" parent="GameOver/ColorRect" unique_id=1057040176]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = -11.5
-offset_right = 46.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 198
-text = "GAME OVER"
+[node name="StaticBody2D6" parent="." unique_id=2109787417 instance=ExtResource("3_feb5d")]
+position = Vector2(456, 512)
+
+[node name="StaticBody2D7" parent="." unique_id=405309705 instance=ExtResource("3_feb5d")]
+position = Vector2(1256, 440)
+
+[node name="StaticBody2D8" parent="." unique_id=263583961 instance=ExtResource("3_feb5d")]
+position = Vector2(840, 712)
+
+[node name="StaticBody2D9" parent="." unique_id=1478327306 instance=ExtResource("3_feb5d")]
+position = Vector2(768, 200)
+
+[node name="StaticBody2D10" parent="." unique_id=1125157344 instance=ExtResource("3_feb5d")]
+position = Vector2(1040, 168)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Boss_timer" to="." method="_on_boss_timer_timeout"]

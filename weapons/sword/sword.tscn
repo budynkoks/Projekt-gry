@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cepivb5ie4aq"]
+
+[ext_resource type="Texture2D" uid="uid://45cb1dfvrv24" path="res://weapons/sword/frames/Slash3_color2_frame1.png" id="1_55efj"]
+[ext_resource type="Script" uid="uid://cd2n05oe23jry" path="res://weapons/sword/sword.gd" id="1_i73s3"]
+[ext_resource type="Texture2D" uid="uid://4lp252r857aw" path="res://weapons/sword/frames/Slash3_color2_frame2.png" id="2_i73s3"]
+[ext_resource type="Texture2D" uid="uid://cvovg2hhkwsi1" path="res://weapons/sword/frames/Slash3_color2_frame3.png" id="3_c1c6o"]
+[ext_resource type="Texture2D" uid="uid://ckbmqf852c452" path="res://weapons/sword/frames/Slash3_color2_frame4.png" id="4_f6jtc"]
+[ext_resource type="Texture2D" uid="uid://br0eepgxexlfv" path="res://weapons/sword/frames/Slash3_color2_frame5.png" id="5_jbw5t"]
+[ext_resource type="Texture2D" uid="uid://8eaioyntcb8c" path="res://weapons/sword/frames/Slash3_color2_frame6.png" id="6_adgqr"]
+[ext_resource type="Texture2D" uid="uid://ymhgsfrjr6nm" path="res://weapons/sword/frames/Slash3_color2_frame7.png" id="7_tn2vl"]
+[ext_resource type="Texture2D" uid="uid://ct2albtvvtalk" path="res://weapons/sword/frames/Slash3_color2_frame8.png" id="8_f5m16"]
+[ext_resource type="Texture2D" uid="uid://byum8igg8rpwg" path="res://weapons/sword/frames/Slash3_color2_frame9.png" id="9_onk4r"]
+[ext_resource type="AudioStream" uid="uid://do280eo08ci2b" path="res://sounds/u_xjrmmgxfru-sword-slash-02-266315.mp3" id="11_c1c6o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y8jj2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_55efj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i73s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c1c6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f6jtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jbw5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_adgqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tn2vl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f5m16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_onk4r")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i73s3"]
+size = Vector2(57, 66)
+
+[node name="sword" type="Area2D" unique_id=1821241780]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_i73s3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1532035303]
+position = Vector2(7, -7)
+rotation = 1.5707964
+sprite_frames = SubResource("SpriteFrames_y8jj2")
+autoplay = "default"
+frame = 8
+frame_progress = 1.0
+speed_scale = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1283596460]
+position = Vector2(30, -14)
+shape = SubResource("RectangleShape2D_i73s3")
+
+[node name="HitSound" type="AudioStreamPlayer" parent="." unique_id=583899907]
+unique_name_in_owner = true
+stream = ExtResource("11_c1c6o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

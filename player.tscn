@@ -1,41 +1,181 @@
 [gd_scene format=3 uid="uid://c1sx7bic4uhdj"]
 
-[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://yh2ao5or56lq" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://fu44asxsqudv" path="res://gun.tscn" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://cuyepmv4kmsct" path="res://characters/player/Idle/frame1.png" id="3_q13i1"]
+[ext_resource type="Texture2D" uid="uid://cfa1ltx4k4thk" path="res://characters/player/Idle/frame2.png" id="4_pylmc"]
+[ext_resource type="Texture2D" uid="uid://cd0g1ldrluxa3" path="res://characters/player/Idle/frame3.png" id="5_pbfsw"]
+[ext_resource type="Texture2D" uid="uid://cc3f3u4d4vr7l" path="res://characters/player/Idle/frame4.png" id="6_5tmop"]
+[ext_resource type="Texture2D" uid="uid://bjse0e18l3qe1" path="res://characters/player/Run/frame1.png" id="7_7ahtn"]
+[ext_resource type="Texture2D" uid="uid://cghabwlbvevks" path="res://characters/player/Run/frame2.png" id="8_7lmhl"]
+[ext_resource type="Texture2D" uid="uid://dqtcfke2uxi5v" path="res://characters/player/Run/frame3.png" id="9_dx0e4"]
+[ext_resource type="Texture2D" uid="uid://b78li774pobbb" path="res://characters/player/Run/frame4.png" id="10_jm5j8"]
+[ext_resource type="Texture2D" uid="uid://cxfep8y7v338v" path="res://characters/player/Run/frame5.png" id="11_7hik5"]
+[ext_resource type="Texture2D" uid="uid://d3dufv8toebvd" path="res://characters/player/Run/frame6.png" id="12_qtqh7"]
+[ext_resource type="Texture2D" uid="uid://cfhgsdkwk3wlw" path="res://characters/player/Run/frame7.png" id="13_2wuci"]
+[ext_resource type="Texture2D" uid="uid://cnms2t4krabq0" path="res://characters/player/Run/frame8.png" id="14_iruf7"]
+[ext_resource type="Texture2D" uid="uid://82f0aemm2fyy" path="res://characters/player/Run/frame9.png" id="15_j5n4i"]
+[ext_resource type="Texture2D" uid="uid://lkakxpm00fws" path="res://characters/player/Run/frame10.png" id="16_634y6"]
+[ext_resource type="Texture2D" uid="uid://c40xuu5ma1c0t" path="res://characters/player/Run/frame11.png" id="17_efrwb"]
+[ext_resource type="Texture2D" uid="uid://00vk8bwipqgs" path="res://characters/player/Run/frame12.png" id="18_hiqhm"]
+[ext_resource type="Script" uid="uid://qco2fnao8xko" path="res://upgrade_ui.gd" id="19_pylmc"]
+[ext_resource type="Script" uid="uid://dawbi1csfqmj5" path="res://game_timer.gd" id="20_pbfsw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
-radius = 36.124783
+radius = 18.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
-radius = 38.12
+radius = 21.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3pqv"]
 bg_color = Color(0.13177821, 0.13046971, 0.11643762, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqtel"]
-bg_color = Color(0, 0.64705884, 0, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+bg_color = Color(0.7446749, 0.09695425, 0.16460386, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tkwlq"]
+load_path = "res://.godot/imported/frame1.png-a32bf5d33543bb3615f7e49b6ee2e059.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hl5qd"]
+load_path = "res://.godot/imported/frame2.png-66f7a103efafe3d247c67b100482b110.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ek41f"]
+load_path = "res://.godot/imported/frame3.png-0a3590c3b9b807d67e249427f6772219.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_khis8"]
+load_path = "res://.godot/imported/frame4.png-fb4d990158ca2e47fde0a8148b09ce8b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b88wv"]
+load_path = "res://.godot/imported/frame5.png-b55be295b0cdc91560e19ffa85d0ed77.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pgbbb"]
+load_path = "res://.godot/imported/frame6.png-7409aeac09ebf1dca86345daf596ddd2.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_331ug"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_q13i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pylmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pbfsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5tmop")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7ahtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7lmhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dx0e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jm5j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7hik5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qtqh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2wuci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_iruf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_j5n4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_634y6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_efrwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_hiqhm")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_tkwlq")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_hl5qd")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_ek41f")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_khis8")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_b88wv")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_pgbbb")
+}],
+"loop": true,
+"name": &"sword_slash",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q13i1"]
+bg_color = Color(0.07968392, 0.07686334, 0.06840203, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9199583, 0.79964405, 7.70092e-07, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pylmc"]
+bg_color = Color(0, 0.9490196, 0.96862745, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(0.92156863, 0.8, 0, 1)
+corner_radius_top_left = 4
+corner_radius_bottom_left = 4
 
 [node name="Player" type="CharacterBody2D" unique_id=1227242896]
 motion_mode = 1
 script = ExtResource("1_onrkg")
 
-[node name="HappyBoo" parent="." unique_id=1091727253 instance=ExtResource("1_4flbx")]
+[node name="Gun" parent="." unique_id=813698784 instance=ExtResource("3_i3pqv")]
+position = Vector2(-6, 7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1754786117]
 shape = SubResource("CircleShape2D_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=553186750]
-
-[node name="Gun" parent="." unique_id=813698784 instance=ExtResource("3_i3pqv")]
+zoom = Vector2(2.5, 2.5)
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=1595593108]
 unique_name_in_owner = true
@@ -48,12 +188,86 @@ debug_color = Color(0.9125944, 0.24163872, 0.4331456, 0.41960785)
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=944621687]
 unique_name_in_owner = true
-offset_left = -97.0
-offset_top = -149.0
-offset_right = 99.0
-offset_bottom = -122.0
+offset_left = -40.0
+offset_top = 25.0
+offset_right = 41.0
+offset_bottom = 38.0
 theme_override_styles/background = SubResource("StyleBoxFlat_i3pqv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_hqtel")
 value = 100.0
 rounded = true
 show_percentage = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1410841106]
+position = Vector2(-1, -28)
+sprite_frames = SubResource("SpriteFrames_331ug")
+animation = &"sword_slash"
+frame = 5
+frame_progress = 0.01691027
+
+[node name="sword_timer" type="Timer" parent="." unique_id=1222457982]
+wait_time = 2.0
+autostart = true
+
+[node name="XPbar" type="ProgressBar" parent="." unique_id=1297157367]
+offset_left = -384.0
+offset_top = -216.0
+offset_right = 382.0
+offset_bottom = -183.0
+size_flags_horizontal = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_q13i1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pylmc")
+rounded = true
+show_percentage = false
+
+[node name="UpgradeUI" type="CanvasLayer" parent="." unique_id=1567768888]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+script = ExtResource("19_pylmc")
+
+[node name="ColorRect" type="ColorRect" parent="UpgradeUI" unique_id=1700243595]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5176471)
+
+[node name="VBoxContainer" type="HBoxContainer" parent="UpgradeUI" unique_id=1589083401]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -379.5
+offset_top = -170.0
+offset_right = 379.5
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Option" type="Button" parent="UpgradeUI/VBoxContainer" unique_id=741702622]
+layout_mode = 2
+
+[node name="Option2" type="Button" parent="UpgradeUI/VBoxContainer" unique_id=1974393427]
+layout_mode = 2
+
+[node name="Option3" type="Button" parent="UpgradeUI/VBoxContainer" unique_id=415843057]
+layout_mode = 2
+
+[node name="GameTimerLabel" type="Label" parent="." unique_id=1483647976]
+offset_left = -56.0
+offset_top = -176.0
+offset_right = 56.0
+offset_bottom = -136.0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "00:00"
+horizontal_alignment = 1
+
+[node name="Game_timer" type="Timer" parent="." unique_id=1841404506]
+script = ExtResource("20_pbfsw")
+
+[connection signal="timeout" from="sword_timer" to="." method="_on_sword_timer_timeout"]

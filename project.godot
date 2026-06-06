@@ -75,9 +75,8 @@ Settings/Show_Tooltips=true
 [application]
 
 config/name="Gra survivors"
-run/main_scene="uid://b3u84076due2"
+run/main_scene="uid://xlno8fiahddi"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.png"
 
 [display]
 

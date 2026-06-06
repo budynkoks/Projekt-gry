@@ -1,20 +1,52 @@
 [gd_scene format=3 uid="uid://v45siqi72g4b"]
 
 [ext_resource type="Script" uid="uid://dox6jhv1bqtvi" path="res://enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://dc6ar5j87j4u0" path="res://characters/slime/slime_body.png" id="1_7k104"]
+[ext_resource type="Texture2D" uid="uid://jp3e5itgabbx" path="res://characters/enemy/no-particles/frame1.png" id="2_wujgv"]
+[ext_resource type="Texture2D" uid="uid://c5n2x3ssldmfi" path="res://characters/enemy/no-particles/frame2.png" id="3_hb8ge"]
+[ext_resource type="Texture2D" uid="uid://bln2ol4sf0hae" path="res://characters/enemy/no-particles/frame3.png" id="4_e1ltt"]
+[ext_resource type="Texture2D" uid="uid://tvtqai6fork5" path="res://characters/enemy/no-particles/frame4.png" id="5_dxifv"]
+[ext_resource type="Texture2D" uid="uid://dddwlm30c2vrx" path="res://characters/enemy/no-particles/frame5.png" id="6_pwjut"]
+[ext_resource type="Texture2D" uid="uid://b81rpdy5i4wc2" path="res://characters/enemy/no-particles/frame6.png" id="7_n0g06"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7xaro"]
-radius = 57.00877
+radius = 16.03122
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ar8e5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wujgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hb8ge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e1ltt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dxifv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pwjut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_n0g06")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1275296348]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_4gyqm")
 
-[node name="SlimeBody" type="Sprite2D" parent="." unique_id=2132241217]
-position = Vector2(2, -10)
-texture = ExtResource("1_7k104")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=335248603]
 position = Vector2(3, -5)
 shape = SubResource("CircleShape2D_7xaro")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1711205146]
+position = Vector2(2, -10)
+sprite_frames = SubResource("SpriteFrames_ar8e5")
+frame_progress = 0.37934119
