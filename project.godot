@@ -74,7 +74,7 @@ Settings/Show_Tooltips=true
 
 [application]
 
-config/name="Gra survivors"
+config/name="Lab_15"
 run/main_scene="uid://xlno8fiahddi"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
